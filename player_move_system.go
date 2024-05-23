@@ -33,6 +33,12 @@ func MovePlayer(g *Game) {
 		if !tile.Blocked {
 			pos.X += x
 			pos.Y += y
+			level.PlayerVisible.Compute(level, pos.X, pos.Y, 8)
 		}
+	}
+
+	if x != 0 || y != 0 {
+		g.Turn = GetNextState(g.Turn)
+		g.TurnCounter = 0
 	}
 }
