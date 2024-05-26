@@ -32,11 +32,15 @@ func NewGame() *Game {
 // Update is called each tic.
 func (g *Game) Update() error {
 	g.TurnCounter++
-	if g.Turn == PlayerTurn && g.TurnCounter > 7 {
+
+	if g.Turn == PlayerTurn && g.TurnCounter > 20 {
 		MovePlayer(g)
 	}
-	// Obviously just for now
-	g.Turn = PlayerTurn
+
+	if g.Turn == MonsterTurn {
+		UpdateMonster(g)
+	}
+
 	return nil
 }
 
