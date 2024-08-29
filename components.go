@@ -23,6 +23,12 @@ type Health struct {
 	CurrentHealth int
 }
 
+type UserMessage struct {
+	AttackMessage    string
+	DeadMessage      string
+	GameStateMessage string
+}
+
 type MeleeWeapon struct {
 	Name          string
 	MinimumDamage int
